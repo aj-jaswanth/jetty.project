@@ -29,16 +29,13 @@
     <asm.version>6.1.1</asm.version>
     <jmh.version>1.20</jmh.version>
     <jmhjar.name>benchmarks</jmhjar.name>
-    <surefireVersion>2.21.0</surefireVersion>
+    <surefireVersion>3.0.0-SNAPSHOT</surefireVersion>
 
     <mavenPluginToolsVersion>3.5</mavenPluginToolsVersion>
     <mavenVersion>3.5.0</mavenVersion>
 
     <!-- testing -->
     <jetty.test.version>5.0-SNAPSHOT</jetty.test.version>
-    <junit.platform.version>1.2.0-SNAPSHOT</junit.platform.version>
-    <junit.vintage.version>5.2.0-SNAPSHOT</junit.vintage.version>
-    <junit.jupiter.version>5.2.0-SNAPSHOT</junit.jupiter.version>
   </properties>
 
   <licenses>
@@ -630,24 +627,6 @@
               </property>
             </systemProperties>
           </configuration>
-          <!-- To support Junit 5 -->
-          <dependencies>
-            <dependency>
-              <groupId>org.junit.platform</groupId>
-              <artifactId>junit-platform-surefire-provider</artifactId>
-              <version>${junit.platform.version}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.junit.jupiter</groupId>
-              <artifactId>junit-jupiter-engine</artifactId>
-              <version>${junit.jupiter.version}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.junit.vintage</groupId>
-              <artifactId>junit-vintage-engine</artifactId>
-              <version>${junit.vintage.version}</version>
-            </dependency>
-          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -915,6 +894,15 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.2.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
   <dependencyManagement>
     <dependencies>
